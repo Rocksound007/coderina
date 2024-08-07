@@ -6,83 +6,12 @@
     <title>Coderina EdTech Foundation</title>
     <link rel="icon" href="coderinalogo.png" type="image/x-icon">
     <style>
-/* Gallery Styles */
-
-/* Styles for the visible gallery */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.gallery img, .gallery video {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-/* Styles for the hidden gallery */
-.hidden-gallery {
-    display: none; /* Hide the hidden gallery section from view */
-}
-
-/* Optional: If you want to ensure that hidden gallery items don't affect layout */
-.hidden-image, .hidden-video {
-    display: none; /* Hide individual items in the hidden gallery */
-}
-
-
-
-
-
-
-
-/* Base styles for larger screens */
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .header-container {
-        flex-direction: row; /* Example adjustment */
-    }
-    
-    .gallery img {
-        width: calc(25% - 15px); /* Four images per row */
-    }
-}
-
-/* Small devices (phones, 768px and below) */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column; /* Stack elements vertically */
-    }
-    
-    .gallery img {
-        width: calc(50% - 15px); /* Two images per row */
-    }
-}
-
-/* Extra small devices (phones, 480px and below) */
-@media (max-width: 480px) {
-    .gallery img {
-        width: calc(100% - 15px); /* One image per row */
-    }
-}
-
-
-
-
-
-
+        /* Your existing styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
         }
-
         .header {
             width: 100%;
             height: 350px;
@@ -96,7 +25,6 @@ body {
             position: relative;
             justify-content: center;
         }
-
         .logo-container {
             position: absolute;
             top: 0px;
@@ -106,25 +34,21 @@ body {
             border-radius: 10px;
             text-align: center;
         }
-
         .logo-container img.logo {
             width: 400px;
             height: 400px;
         }
-
         .header-container {
-    width: 100%; /* Ensure the container spans the full width of the page */
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Background color with transparency */
-    padding: 10px 20px; /* Padding for the content inside the container */
-    box-sizing: border-box; /* Include padding in width calculation */
-    margin: 0; /* Remove any margin */
-}
-
-
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin: 0;
+        }
         .header a {
             color: rgb(218, 214, 14);
             padding: 10px 15px;
@@ -135,60 +59,67 @@ body {
             margin: 0 5px;
             font-weight: bold;
         }
-
         .header a img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
         }
-
         .header a:hover {
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
         }
-
+        .custom-video-wrapper {
+            position: relative;
+            width: 100%;
+            background-color: white;
+            overflow: hidden;
+            height: calc(100vh - 45vh);
+        }
+        .custom-video {
+            width: 100%;
+            height: 190%;
+            display: block;
+            object-fit: cover;
+            clip-path: inset(0% 22% 0% 22%);
+        }
+        .content {
+            padding: 30px;
+        }
         .social-links {
             position: fixed;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
             z-index: 999;
-            background-color: rgba(49, 44, 44, 0.2);
+            background-color: rgba(51, 48, 48, 0.2);
             padding: 5px;
             border-radius: 5px;
         }
-
         .social-links a {
             display: block;
             margin: 10px 0;
             transition: transform 0.3s;
         }
-
         .social-links a img {
             width: 35px;
             height: 35px;
         }
-
         .social-links a:hover {
             transform: translate(10px, -10px);
         }
-
         .content {
             padding: 20px;
             padding-top: 20px;
             margin-left: 100px;
             margin-right: 100px;
         }
-
         .floating {
             position: relative;
             transition: transform 0.3s;
         }
-
         .floating:hover {
             transform: translateY(-10px);
         }
-
         .right-links {
             position: fixed;
             top: 50%;
@@ -200,65 +131,53 @@ body {
             border-radius: 5px;
             display: none;
         }
-
         .right-links a {
             display: block;
             margin: 10px 0;
             transition: transform 0.3s;
         }
-
         .right-links a img {
             width: 35px;
             height: 35px;
         }
-
         .right-links a:hover {
             transform: translate(-10px, -10px);
         }
-
-        /* Base floating animation Gallery styles */
-@keyframes float {
-    0% {
-        transform: translate(var(--float-x, 0), var(--float-y, 0));
-    }
-    50% {
-        transform: translate(calc(var(--float-x, 0) * 0.5), calc(var(--float-y, 0) * 0.5));
-    }
-    100% {
-        transform: translate(var(--float-x, 0), var(--float-y, 0));
-    }
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
+        @keyframes float {
+            0% {
+                transform: translate(var(--float-x, 0), var(--float-y, 0));
+            }
+            50% {
+                transform: translate(calc(var(--float-x, 0) * 0.5), calc(var(--float-y, 0) * 0.5));
+            }
+            100% {
+                transform: translate(var(--float-x, 0), var(--float-y, 0));
+            }
+        }
+        .gallery img {
+    height: 200px; /* Set a fixed height */
+    width: 100%; /* Make sure it spans the full width of its container */
+    object-fit: cover; /* Ensure images cover the specified height */
     border: 5px solid #ccc;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Animation will be set via JavaScript */
-    /* Apply floating animation */
-    animation: float 5s ease-in-out infinite; /* Default animation values */
+    animation: float 5s ease-in-out infinite;
 }
 
-/* Hover effect to magnify the image */
-.gallery img:hover {
-    transform: scale(1.5) !important; /* Ensure magnification is applied */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 999; /* Ensure magnified images appear on top */
-}
-
-
-        /* Gallery Styles */
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
-            padding-left: 150px;  /* Padding to avoid overlap with social links */
-            padding-right: 100px; /* Padding to avoid overlap with right links */
+        .gallery img:hover {
+            transform: scale(1.5) !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 999;
         }
+        .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    padding-left: 150px;
+    padding-right: 100px;
+}
 
         .gallery img {
             width: 100%;
@@ -267,153 +186,143 @@ body {
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        /* Default hover effect */
-        .gallery img:hover {
-            transform: scale(1.5); /* Reduced magnification */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 999; /* Ensure magnified images appear on top */
+        .hidden-gallery {
+            display: none;
+            padding: 20px;
+        }
+        .gallery-image {
+            margin: 5px;
+            width: calc(25% - 10px);
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .modal .prev, .modal .next {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .modal .prev {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+        .modal .next {
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        .modal .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(51, 42, 42, 0.7);
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        ::-webkit-scrollbar {
+            width: 16px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ada6a6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #464545;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #000000;
         }
 
-        /* Reduced magnification for images on the left side */
-        .gallery img.left-side:hover {
-            transform: scale(1.2); /* Less magnification */
-        }
-
-        .gallery img.middle-side:hover {
-            transform: scale(1.3); /* Moderate magnification */
-        }
-
-        .gallery img.right-side:hover {
-            transform: scale(1.5); /* More magnification */
-        }
-/* Modal Styles */
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+        #about {
+    margin: 0 5%; /* Adjust left and right margins as needed */
+    max-width: 700px; /* Maximum width to prevent excessive stretching on large screens */
+    line-height: 1.6; /* Adjust the value for desired line spacing */
+    padding: 20px; /* Optional: Adds padding inside the content box */
+    background-color: #f9f9f9; /* Optional: Background color for better visibility */
+    border-radius: 10px; /* Optional: Rounded corners */
+    text-align: justify; /* Justifies the text */
 }
 
-.modal-content {
-    position: relative;
-    max-width: 80%;
-    max-height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 10px;
+#about h1 {
+    margin-bottom: 10px; /* Adjust space below the heading */
+    text-align: left; /* Optional: Center the heading */
 }
 
-.modal-content img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Ensures the entire image is visible without distortion */
+#about p {
+    margin-bottom: 10px; /* Adjust space below each paragraph */
 }
 
-/* Control buttons for the modal */
-.modal .prev, .modal .next {
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
 
-.modal .prev {
-    left: 10px;
-    transform: translateY(-50%);
-}
-
-.modal .next {
-    right: 10px;
-    transform: translateY(-50%);
-}
-
-.modal .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
 
     </style>
+
+
+
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
             <img src="CODERINAlogos.png" alt="Coderina Logo" class="logo">
         </div>
-        <div class="header-container">
+        <div class="header-container" id="home">
             <a href="#home" class="floating"><img src="homepage.jpg" alt="Homepage">Homepage</a>
             <a href="#about" class="floating"><img src="aboutus.png" alt="About Us">About Us</a>
-            <a href="#projects" class="floating"><img src="program.png" alt="Projects">Projects</a>
-            <a href="#events" class="floating"><img src="event.png" alt="Upcoming Events">Upcoming Events</a>
+            <a href="#programs" class="floating"><img src="program.png" alt="Programs">Programs</a>
+            <a href="#upcoming-events" class="floating"><img src="event.png" alt="Upcoming Events">Upcoming Events</a>
             <a href="#resources" class="floating"><img src="resources.png" alt="Resources">Resources</a>
-            <a href="#involved" class="floating"><img src="involved.png" alt="Get Involved">Get Involved</a>
+            <a href="#get-involved" class="floating"><img src="involved.png" alt="Get Involved">Get Involved</a>
             <a href="#news" class="floating"><img src="news.png" alt="News">News</a>
             <a href="#contact" class="floating"><img src="contact.png" alt="Contact">Contact</a>
             <a href="#gallery" class="floating"><img src="gallery.png" alt="Gallery">Gallery</a>
         </div>
     </header>
-
-    <!-- Visible Gallery Section -->
-<section id="gallery" class="gallery">
-    <img src="YAZ1915.jpg" alt="Gallery Image 1" class="left-side" onclick="openModal(this.src)">
-    <img src="YAZ1913.jpg" alt="Gallery Image 2" class="left-side" onclick="openModal(this.src)">
-    <img src="YAZ1972.jpg" alt="Gallery Image 3" class="middle-side" onclick="openModal(this.src)">
-    <img src="B71A0207.jpg" alt="Gallery Image 4" class="middle-side" onclick="openModal(this.src)">
-    <img src="B71A0212.jpg" alt="Gallery Image 5" class="right-side" onclick="openModal(this.src)">
-    <img src="B71A0333.jpg" alt="Gallery Image 6" class="right-side" onclick="openModal(this.src)">
-</section>
-
- <!-- Hidden Images for Gallery -->
-<section id="hidden-gallery" class="hidden-gallery">
-    <img src="_YAZ2115.jpg" alt="Hidden Image 1" class="hidden-image" onclick="openModal(this.src)">
-    <img src="B71A0512.jpg" alt="Hidden Image 2" class="hidden-image" onclick="openModal(this.src)">
-    <img src="_YAZ1880.jpg" alt="Hidden Image 2" class="hidden-image" onclick="openModal(this.src)">
-    <video class="hidden-video" autoplay loop muted onclick="openModal('v1.mp4')">
-        <source src="v1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <!-- Add more hidden images or videos as needed -->
-</section>
-       
-      
-           <!-- Modal -->
-    <div id="modal" class="modal">
-        <button class="close" id="modalClose">&times;</button>
-        <button class="prev" id="modalPrev">&#10094;</button>
-        <button class="next" id="modalNext">&#10095;</button>
-        <div class="modal-content">
-            <img id="modalImg" src="" alt="Modal Image">
-        </div>
+    <div class="custom-video-wrapper">
+        <video class="custom-video" autoplay muted loop>
+            <source src="WELCOME.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-
     <div class="social-links">
         <a href="https://x.com/coderina" target="_blank"><img src="Twitter.jpeg" alt="Twitter"></a>
         <a href="https://www.instagram.com/coderinaedu/" target="_blank"><img src="Instagram.png" alt="Instagram"></a>
@@ -421,169 +330,145 @@ body {
         <a href="https://www.linkedin.com/in/coderina-a71a851a7/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
         <a href="https://www.youtube.com/@coderina5977" target="_blank"><img src="youtube.png" alt="YouTube"></a>
     </div>
-
-    <div class="right-links" id="rightLinks">
+    
+    <div class="right-links">
         <a href="#home"><img src="homepage.jpg" alt="Homepage"></a>
         <a href="#about"><img src="aboutus.png" alt="About Us"></a>
-        <a href="#projects"><img src="program.png" alt="Projects"></a>
-        <a href="#events"><img src="event.png" alt="Upcoming Events"></a>
+        <a href="#programs"><img src="program.png" alt="Programs"></a>
+        <a href="#upcoming-events"><img src="event.png" alt="Upcoming Events"></a>
         <a href="#resources"><img src="resources.png" alt="Resources"></a>
-        <a href="#involved"><img src="involved.png" alt="Get Involved"></a>
+        <a href="#get-involved"><img src="involved.png" alt="Get Involved"></a>
         <a href="#news"><img src="news.png" alt="News"></a>
         <a href="#contact"><img src="contact.png" alt="Contact"></a>
         <a href="#gallery"><img src="gallery.png" alt="Gallery"></a>
     </div>
-    <div class="content">
-        <section id="home">
-            <h1>Welcome to Coderina EdTech Foundation</h1>
-            <p>Introduction to the organization, mission statement, and featured programs.</p>
-        </section>
+
+   
+
+    <div class="content" id="about">
+        <h1>About Us</h1>
+        <p>Welcome to CODERINA Education and Technology Foundation, where we inspire the next generation of innovators. At CODERINA, we provide hands-on STEM education, empowering young minds across Africa. 
+            Coderina is an independent non-profit organisation that works to promote IT development, innovation and entrepreneurship in Africa. 
+            We engage with private and public companies, government agencies, Non-Governmental Organisations and the education sector.</p> 
+        <P>Our programs span robotics, coding, and 3D printing, offering students the tools and skills they need to succeed in the digital age. Through our partnerships with schools and communities, we bring cutting-edge technology and resources to underrepresented areas, bridging the digital divide.</P>
+        <P>Our initiatives, like the FIRST LEGO League Challenge and our annual youth camps, foster teamwork, creativity, and problem-solving—preparing students for the future.</P>
+
+    
+    </div>
+    <div class="content" id="programs">
+        <h1>Programs</h1>
+        <p>Your content goes here...</p>
+    </div>
+    <div class="content" id="upcoming-events">
+        <h1>Upcoming Events</h1>
+        <p>Your content goes here...</p>
+    </div>
+    <div class="content" id="resources">
+        <h1>Resources</h1>
+        <p>Your content goes here...</p>
+    </div>
+    <div class="content" id="get-involved">
+        <h1>Get Involved</h1>
+        <p>Your content goes here...</p>
+    </div>
+    <div class="content" id="news">
+        <h1>News</h1>
+        <p>Your content goes here...</p>
+    </div>
+    <div class="content" id="contact">
+        <h1>Contact</h1>
+        <p>Your content goes here...</p>
+    </div>
+    
+
+    <div class="content" id="gallery">
+        <h1>Gallery</h1>
+        <div class="gallery">
+            <img src="TELE4501.JPG" alt="Image 1">
+            <img src="PXL_20240316_162335781.jpg" alt="Image 2">
+            <img src="TELE4359.JPG" alt="Image 3">
+            <img src="B71A0207.jpg" alt="Image 4">
+            <img src="B71A0212.jpg" alt="Image 5">
+            <img src="B71A0333.jpg" alt="Image 6">
+        </div>
+    </div>
+    <div class="hidden-gallery">
+        <img src="image7.jpg" alt="Image 7">
+        <img src="image8.jpg" alt="Image 8">
+        <img src="image9.jpg" alt="Image 9">
+        <!-- Add more images as needed -->
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Modal Content">
+            <button class="prev" onclick="prevImage()">&#10094;</button>
+            <button class="next" onclick="nextImage()">&#10095;</button>
+        </div>
     </div>
 
-    <div class="content">
-        <section id="about">
-            <h1>About Us</h1>
-            <p>History, vision, and mission statement, team profiles, board of directors, partners, and sponsors.</p>
-        </section>
-    </div>
-    <div class="content">
-        <section id="projects">
-            <h1>Projects</h1>
-            <p>Overview of programs and projects, details on specific initiatives, success stories, and testimonials.</p>
-        </section>
-    </div>
 
-    <div class="content">
-        <section id="events">
-            <h1>Upcoming Events</h1>
-            <p>Upcoming events and webinars, past event archives, registration, and RSVP information.</p>
-        </section>
-    </div>
-
-    <div class="content">
-        <section id="resources">
-            <h1>Resources</h1>
-            <p>Learning resources, tutorials, videos, and links to relevant external resources.</p>
-        </section>
-    </div>
-    <div class="content">
-        <section id="involved">
-            <h1>Get Involved</h1>
-            <p>Volunteer opportunities, donation information.</p>
-        </section>
-    </div>
-
-    <div class="content">
-        <section id="news">
-            <h1>News</h1>
-            <p>Latest news and announcements, media coverage.</p>
-        </section>
-    </div>
-
-    <div class="content">
-        <section id="contact">
-            <h1>Contact</h1>
-            <p>Contact form, address and map, phone number, and email.</p>
-            <!-- Contact form can be added here -->
-        </section>
-    </div>
 
     <script>
-
-function openModal(src) {
-    var modal = document.getElementById("myModal");
-    var modalImage = document.getElementById("modalImage");
-    var modalVideo = document.getElementById("modalVideo");
-    
-    // Check if src is a video or an image
-    if (src.endsWith(".mp4")) {
-        modalImage.style.display = "none";
-        modalVideo.style.display = "block";
-        modalVideo.src = src;
-        modalVideo.play();
-    } else {
-        modalImage.style.display = "block";
-        modalVideo.style.display = "none";
-        modalImage.src = src;
-    }
-    
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    var modalVideo = document.getElementById("modalVideo");
-    
-    modal.style.display = "none";
-    modalVideo.pause();
-}
-
-
-
-
-     // Function to generate random float values
-     function getRandomFloat(min, max) {
-        return Math.random() * (max - min) + min;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const images = document.querySelectorAll('.gallery img');
-
-        images.forEach((img) => {
-            const floatX = getRandomFloat(-10, 10); // Random X offset
-            const floatY = getRandomFloat(-10, 10); // Random Y offset
-            const duration = getRandomFloat(2, 5);  // Random animation duration
-
-            img.style.animation = `float ${duration}s ease-in-out infinite`;
-            img.style.setProperty('--float-x', `${floatX}px`);
-            img.style.setProperty('--float-y', `${floatY}px`);
-        });
-    });
-        // Show right-links after scrolling past the header background
-        window.addEventListener('scroll', function () {
-            const rightLinks = document.getElementById('rightLinks');
-            if (window.scrollY > 450) {
-                rightLinks.style.display = 'block';
-            } else {
-                rightLinks.style.display = 'none';
-            }
-        });
-
-        // Modal functionality
+        // JavaScript for the modal
+        const galleryImages = document.querySelectorAll('.gallery img, .hidden-gallery img');
         const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modalImg');
-        const modalClose = document.getElementById('modalClose');
-        const modalPrev = document.getElementById('modalPrev');
-        const modalNext = document.getElementById('modalNext');
-        
-        let currentImgIndex = 0;
-        const galleryImages = Array.from(document.querySelectorAll('.gallery img'));
+        const modalImage = document.getElementById('modalImage');
+        let currentImageIndex;
 
         galleryImages.forEach((img, index) => {
             img.addEventListener('click', () => {
                 modal.style.display = 'flex';
-                modalImg.src = img.src;
-                currentImgIndex = index;
+                modalImage.src = img.src;
+                currentImageIndex = index;
             });
         });
 
-        modalClose.addEventListener('click', () => {
+        function closeModal() {
             modal.style.display = 'none';
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : galleryImages.length - 1;
+            modalImage.src = galleryImages[currentImageIndex].src;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex < galleryImages.length - 1) ? currentImageIndex + 1 : 0;
+            modalImage.src = galleryImages[currentImageIndex].src;
+        }
+
+        // JavaScript for floating animation
+        const floatingElements = document.querySelectorAll('.floating');
+        floatingElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.style.animation = 'none';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 10);
+            });
         });
 
-        modalPrev.addEventListener('click', () => {
-            currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
-            modalImg.src = galleryImages[currentImgIndex].src;
+        // Floating animation
+        function setRandomFloatDirection(element) {
+            const randomX = Math.random() * 20 - 10; // Random value between -10 and 10
+            const randomY = Math.random() * 20 - 10; // Random value between -10 and 10
+            element.style.setProperty('--float-x', `${randomX}px`);
+            element.style.setProperty('--float-y', `${randomY}px`);
+        }
+
+        document.querySelectorAll('.gallery img').forEach(img => {
+            setRandomFloatDirection(img);
+            img.addEventListener('mouseover', () => setRandomFloatDirection(img));
         });
 
-        modalNext.addEventListener('click', () => {
-            currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
-            modalImg.src = galleryImages[currentImgIndex].src;
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+        // Show right-links after scrolling past header
+        window.addEventListener('scroll', () => {
+            const rightLinks = document.querySelector('.right-links');
+            if (window.scrollY > document.querySelector('.header').offsetHeight) {
+                rightLinks.style.display = 'block';
+            } else {
+                rightLinks.style.display = 'none';
             }
         });
     </script>
