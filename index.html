@@ -12,6 +12,7 @@
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
         }
+
         .header {
             width: 100%;
             height: 350px;
@@ -120,29 +121,7 @@
         .floating:hover {
             transform: translateY(-10px);
         }
-        .right-links {
-            position: fixed;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            z-index: 999;
-            background-color: rgba(49, 44, 44, 0.2);
-            padding: 5px;
-            border-radius: 5px;
-            display: none;
-        }
-        .right-links a {
-            display: block;
-            margin: 10px 0;
-            transition: transform 0.3s;
-        }
-        .right-links a img {
-            width: 35px;
-            height: 35px;
-        }
-        .right-links a:hover {
-            transform: translate(-10px, -10px);
-        }
+        
         @keyframes float {
             0% {
                 transform: translate(var(--float-x, 0), var(--float-y, 0));
@@ -274,13 +253,22 @@
             background: #000000;
         }
 
+        
+        .about-wrapper {
+    display: flex; /* Aligns items horizontally */
+    align-items: flex-start; /* Aligns items to the top */
+    margin: 0 5%; /* Adjust the margins as needed */
+    max-width: 2000px; /* Maximum width to prevent excessive stretching */
+    gap: 20px; /* Space between text and image */
+   
+}
         #about {
-    margin: 0 5%; /* Adjust left and right margins as needed */
+    margin: 0 2%; /* Adjust left and right margins as needed */
     max-width: 700px; /* Maximum width to prevent excessive stretching on large screens */
     line-height: 1.6; /* Adjust the value for desired line spacing */
     padding: 20px; /* Optional: Adds padding inside the content box */
-    background-color: #f9f9f9; /* Optional: Background color for better visibility */
-    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: #faf7f7; /* Optional: Background color for better visibility */
+    border-radius: 30px; /* Optional: Rounded corners */
     text-align: justify; /* Justifies the text */
 }
 
@@ -294,8 +282,33 @@
 }
 
 
+.about-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    
+}
 
-    </style>
+.about-text {
+    flex: 1; /* Text takes up remaining space */
+}
+
+.about-image {
+    margin-left: 5px; /* Space between text and image */
+}
+
+.about-image img {
+    max-width: 80%; /* Ensure the image doesn't exceed its container's width */
+    height: auto; /* Maintain aspect ratio */
+    /* Adjust the following properties to position the image as desired */
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 20px; /* Adjust the left margin as needed */
+    border-radius: 30px; /* Optional: Rounded corners */
+}
+
+
+</style>
 
 
 
@@ -307,8 +320,8 @@
         </div>
         <div class="header-container" id="home">
             <a href="#home" class="floating"><img src="homepage.jpg" alt="Homepage">Homepage</a>
-            <a href="#about" class="floating"><img src="aboutus.png" alt="About Us">About Us</a>
-            <a href="#programs" class="floating"><img src="program.png" alt="Programs">Programs</a>
+            <a href="#about" class="floating"><img src="aboutus.png" alt="About Us">About Coderina</a>
+            <a href="#programs" class="floating"><img src="program.png" alt="Programs">Projects</a>
             <a href="#upcoming-events" class="floating"><img src="event.png" alt="Upcoming Events">Upcoming Events</a>
             <a href="#resources" class="floating"><img src="resources.png" alt="Resources">Resources</a>
             <a href="#get-involved" class="floating"><img src="involved.png" alt="Get Involved">Get Involved</a>
@@ -331,30 +344,26 @@
         <a href="https://www.youtube.com/@coderina5977" target="_blank"><img src="youtube.png" alt="YouTube"></a>
     </div>
     
-    <div class="right-links">
-        <a href="#home"><img src="homepage.jpg" alt="Homepage"></a>
-        <a href="#about"><img src="aboutus.png" alt="About Us"></a>
-        <a href="#programs"><img src="program.png" alt="Programs"></a>
-        <a href="#upcoming-events"><img src="event.png" alt="Upcoming Events"></a>
-        <a href="#resources"><img src="resources.png" alt="Resources"></a>
-        <a href="#get-involved"><img src="involved.png" alt="Get Involved"></a>
-        <a href="#news"><img src="news.png" alt="News"></a>
-        <a href="#contact"><img src="contact.png" alt="Contact"></a>
-        <a href="#gallery"><img src="gallery.png" alt="Gallery"></a>
+      
+    <div class="about-wrapper">
+        <div class="content" id="about">
+            <h1>About Coderina</h1>
+            <p>Welcome to CODERINA Education and Technology Foundation, a nonprofit organization committed to leveraging technology as a powerful tool for youth development and inclusion. Our mission is to inspire the next generation of innovators through experiential, hands-on STEAM educational programs, while actively promoting IT development, innovation, and entrepreneurship across Africa. We collaborate with private and public companies, government agencies, NGOs, and the education sector to achieve these goals.
+            </p> 
+            <p>We demystify emerging technologies for learners through practical programs in robotics, coding, and 3D printing, equipping young people with the skills they need to thrive in the digital age</p>
+            <p>Through our partnerships with schools and communities, we bring cutting-edge technology and resources to underserved areas, helping to bridge the digital divide.</p>
+        </div>
+
+        <div class="about-image">
+            <img src="about_coderina.JPG" alt="About Us Image">
+        </div>
+
     </div>
-
-   
-
-    <div class="content" id="about">
-        <h1>About Us</h1>
-        <p>Welcome to CODERINA Education and Technology Foundation, where we inspire the next generation of innovators. At CODERINA, we provide hands-on STEM education, empowering young minds across Africa. 
-            Coderina is an independent non-profit organisation that works to promote IT development, innovation and entrepreneurship in Africa. 
-            We engage with private and public companies, government agencies, Non-Governmental Organisations and the education sector.</p> 
-        <P>Our programs span robotics, coding, and 3D printing, offering students the tools and skills they need to succeed in the digital age. Through our partnerships with schools and communities, we bring cutting-edge technology and resources to underrepresented areas, bridging the digital divide.</P>
-        <P>Our initiatives, like the FIRST LEGO League Challenge and our annual youth camps, foster teamwork, creativity, and problem-solving—preparing students for the future.</P>
-
     
-    </div>
+    
+    <h1>Vision</h1>
+    <p>To create an inclusive future where no child is left behind, empowering every young person with the skills and opportunities they need to succeed in the digital age.</p>
+    
     <div class="content" id="programs">
         <h1>Programs</h1>
         <p>Your content goes here...</p>
